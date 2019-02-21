@@ -8,11 +8,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Window;
 
 import com.example.moviewood.R;
-import com.example.moviewood.adapter.ScreeningAdapter;
+import com.example.moviewood.adapter.MovieAdapter;
 import com.example.moviewood.model.Cine;
 import com.example.moviewood.rest.ApiHelper;
 
@@ -30,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Cine> call, Response<Cine> response) {
                 if (response.isSuccessful()) {
-                    recyclerView.setAdapter(new ScreeningAdapter(response.body().movieShowtimes, MainActivity.this));
+                    recyclerView.setAdapter(new MovieAdapter(response.body().movieShowtimes, MainActivity.this));
                 }
             }
 

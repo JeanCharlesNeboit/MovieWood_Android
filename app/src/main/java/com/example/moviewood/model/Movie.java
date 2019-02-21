@@ -11,4 +11,9 @@ public class Movie implements Serializable {
     public ArrayList<Genre> genre;
     public Release release;
     public Statistics statistics;
+    public Trailer trailer;
+
+    public String getDuration() {
+        return runtime/3600 +"h" + (int)((((double)runtime%3600)/3600)*60) + "min";
+    }
 }
